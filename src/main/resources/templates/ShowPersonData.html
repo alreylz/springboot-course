@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>
+    All People in MongoDB here:
+</h1>
+
+<table>
+
+
+    <a>https://spring.io/guides/gs/accessing-data-mysql/ </a>
+
+    <thead>
+    <tr>
+        <th> Number</th>
+        <th> Name</th>
+        <th> Surname</th>
+        <th> Picture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${pList}">
+        <td th:text="${personStat.count}">#</td>
+        <td th:text="${person.name}">Name</td>
+        <td th:text="${person.surname}">Surname</td>
+
+        <td  th:with="picture=${person.base64Img()}"> <img width="auto" height="50px"  th:src="@{'data:image/jpeg;base64,'+${picture}}" alt="the profile picture" /></td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<span th:text="${pList.get(0).base64Img()}"> OTherwise</span>
+</body>
+</html>
