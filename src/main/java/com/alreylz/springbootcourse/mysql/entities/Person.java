@@ -19,7 +19,7 @@ public class Person implements Serializable {
 
     @Id
     @Column(name="id")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generation strategy IDENTITY means don't repeat IDs just like that.
     private Long personId;
 
 

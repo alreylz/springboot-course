@@ -19,10 +19,6 @@ public class SpringbootCourseApplication {
 
 
 
-    //
-    @RequestMapping("/")
-    public String dosth(){
-        return "index";
-    }
+
 
 }

@@ -2,7 +2,6 @@ package com.alreylz.springbootcourse.controllers;
 
 import com.alreylz.springbootcourse.mongo.documents.Person;
 import com.alreylz.springbootcourse.repos.MongoRepo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -37,7 +36,6 @@ public class MongoController {
         mongoRepo.deleteAll();
         System.out.println("[@alreylz] Initializing default data in MongoDB");
         List<Person> defaultPeople = new ArrayList<Person>();
-
 
         defaultPeople.add(new Person("Alejandro","Rey"));
         defaultPeople.add(new Person("Pedro","Picapiedra"));

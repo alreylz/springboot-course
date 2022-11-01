@@ -10,7 +10,11 @@ import java.util.List;
 public interface MongoRepo extends CrudRepository<Person, String> {
 
     List<Person> findAll();
-    List<Person> findPersonByName(String name);
+
+    @Query("Select Person p where p.category as :category ")
+    List<Person> busqueda(String category);
+
+    List<Person> findPersonByNameLike(String name);
     List<Person> findByNameAndSurname(String name, String surname  );
 
 }

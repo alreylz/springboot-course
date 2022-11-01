@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot & Thymeleaf File Upload</title>
+</head>
+<body>
+
+<h2>Create Person (Mysql + Picture) Example</h2>
+
+<!--/*@thymesVar id="rootWebPath" type="String"*/-->
+<form method="post" th:attr="action=@{${rootWebPath}+'mysql/people'}"   enctype="multipart/form-data">
+        <label> Name:</label>
+        <input type="text" name="name"  />
+        <label> Surname </label>
+        <input type="text" name="surname"  />
+        <input type="file" name="file" />
+    <button type="submit" >Submit</button>
+</form>
+
+
+</body>
+</html>

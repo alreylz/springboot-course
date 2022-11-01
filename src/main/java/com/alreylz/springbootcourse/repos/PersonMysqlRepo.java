@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PersonMysqlRepo extends CrudRepository<Person, Long> {
 
-    List<Person> findAll();
+    List<Person> );
 
 }
