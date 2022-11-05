@@ -19,7 +19,6 @@ public class SampleWebController {
 
 
     static final String basePath = "/spring-web-example";
-    ;
 
 
     /* SAMPLE DATA INITIALIZATION */
@@ -108,7 +107,7 @@ public class SampleWebController {
     }
 
     // DELETE -> DELETE
-    @RequestMapping(value = basePath + "/address/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = basePath + "/address/{id}", method = RequestMethod.DELETE)
     public @ResponseBody
     Address deleteAddress(@PathVariable String id) {
 

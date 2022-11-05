@@ -5,8 +5,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+
 public interface PersonMysqlRepo extends CrudRepository<Person, Long> {
 
-    List<Person> );
+    List<Person> findAll();
 
 }
+
+
