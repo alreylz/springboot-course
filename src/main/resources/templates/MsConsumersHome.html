@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microservices' Consumers Home</title>
+
+
+    <script>
+
+        window.onload = () =>
+        {
+            const allAnchors = document.querySelectorAll("a");
+            const allConsumersPath = ["js", "thymeleaf"]; // -> Add more if required
+
+            for (let i = 0; i < allAnchors.length; i++) {
+                allAnchors[i].href = window.location.href + "/" + allConsumersPath[i];
+                allAnchors[i].text = allConsumersPath[i];
+            }
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+
+<a href="js"> Javascript example </a>
+<a href="thymeleaf"> Thymeleaf example </a>
+
+</body>
+</html>

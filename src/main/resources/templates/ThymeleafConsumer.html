@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf consumer example</title>
+</head>
+<body>
+
+<h2> Thymeleaf MS consumer example</h2>
+
+<code>
+    // STEP 1 - Required to be able to consume microservices from thymeleaf (STEP 1)
+    @Bean
+    public RestTemplate restemplate(RestTemplateBuilder builder){
+    return builder.build();
+    }
+    // STEP 2 - Use RestTemplate in Controller class and @Autowire it
+    @Autowired
+    RestTemplate restTemplate;
+
+    //STEP 3 - Use in method body
+    Address aFromMS = restTemplate.getForObject("http://localhost:8080/spring-web-example/address/{id}", Address.class, "A");
+</code>
+
+
+<section>
+
+    <article>
+        <!--/*@thymesVar id="singleAddress" type="com.alreylz.springbootcourse.representations.Address"*/-->
+        <h4> This article will display the information extracted from a MS call (a single item) </h4>
+        <p> Street: <span
+                th:text="${singleAddress.street}"> Default text here in case of error loading property   </span>
+        </p>
+        <p> Number: <span
+                th:text="${singleAddress.number}"> Default text here in case of error loading property   </span>
+        </p>
+        <p> City:
+            <span th:text="${singleAddress.city}"> Default text here in case of error loading property   </span>
+        </p>
+
+    </article>
+</section>
+
+
+<!--/*@thymesVar id="listAddresses" type="com.alreylz.springbootcourse.representations.Address[]"*/-->
+
+
+<section>
+
+    <h4> The following table will display the information extracted from a MS call (a list item) </h4>
+
+
+    <table >
+
+        <thead>
+
+        <tr>
+            <td> Index</td>
+            <td> City</td>
+            <td> Street</td>
+            <td> Number</td>
+
+        </tr>
+
+        </thead>
+        <tbody th:each="addr, addrIndex : ${listAddresses}">
+
+        <td th:text="${addrIndex.count}">
+            Count here
+        </td>
+        <td th:text="${addr.city}">
+            City here
+        </td>
+        <td th:text="${addr.street}">
+            Street here
+        </td>
+        <td th:text="${addr.number}">
+            Number here
+        </td>
+        </tbody>
+
+    </table>
+
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+This folder structure is only needed if you plan to use JSPs along with Thymeleaf or as replacement.

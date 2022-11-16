@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /*
     Requisitos de un tipo/clase retornable como representación REST:
+    - Constructor público sin argumentos
     - Implementa serializable
     - Getters y Setters
  */
@@ -18,7 +19,7 @@ public class Address implements Serializable {
     private String city;
     private int number;
 
-    public Address(String id,String street, String city, int number) {
+    public Address(String id, String street, String city, int number) {
         this.id = id;
         this.street = street;
         this.city = city;
@@ -26,8 +27,12 @@ public class Address implements Serializable {
     }
 
 
+    public Address() {
 
-    public String getId(){
+    }
+
+
+    public String getId() {
         return id;
     }
 

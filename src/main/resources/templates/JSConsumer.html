@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Microservices Consumer Example</title>
+    <script>
+
+        let endpointUrl = "/spring-web-example/addresses";
+        // XMLHttpRequest is the object we use to perform HttpRequests in Javascript
+        const xhttp = new XMLHttpRequest();
+
+
+        //To be performed when the request gets a response
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // What to do on success on the request
+                const parsedJSON = JSON.parse(xhttp.responseText);
+                if (Array.isArray(parsedJSON)) {
+                    console.log(`Array received from httpRequest: ${endpointUrl}`);
+                    console.dir(parsedJSON);
+                }
+                const parent = document.getElementById("fill-dynamically");
+
+                //----------------
+                //Table header
+                //----------------
+                const thead = document.createElement("thead")
+                const trowh = document.createElement("tr");
+
+                const allObjKeys = Object.keys(parsedJSON[0]);
+
+                for (let i = 0; i < allObjKeys.length; i++) {
+                    const th = document.createElement("th");
+                    th.textContent = allObjKeys[i];
+                    trowh.appendChild(th);
+                }
+
+                thead.appendChild(trowh);
+                parent.appendChild(thead);
+
+                //Actual content of the table
+                const tbody = document.createElement("tbody")
+
+
+                //Create row by row from the incoming data
+                for (let i = 0; i < parsedJSON.length; i++) {
+                    const trowb = document.createElement("tr")
+                    for (let j = 0; j < allObjKeys.length; j++) {
+                        const td = document.createElement("td");
+
+                        const key = allObjKeys[j];
+                        td.textContent = parsedJSON[i][key];
+
+                        trowb.appendChild(td);
+                    }
+                    tbody.appendChild(trowb)
+                }
+
+                parent.appendChild(tbody);
+
+                //We place fill with the endpoint Url
+                document.getElementById("ex1-endpoint").innerText = endpointUrl;
+            }
+        };
+
+
+        xhttp.open("GET", endpointUrl, true);
+        xhttp.send();
+
+    </script>
+
+
+</head>
+<body>
+
+
+<h1> Vanilla Javascript consumer example </h1>
+
+<h2> The request is made from the front-end. Take a look at the script section of the this view</h2>
+
+
+<section>
+
+
+    <article>
+        <h3> This section will be filled when the page loads making a request to a microservice (endpoint <span
+                id="ex1-endpoint">XXXXXXX</span>) </h3>
+
+
+        <table id="fill-dynamically">
+
+            <!--            <thead>-->
+            <!--            <tr>-->
+            <!--                <th>Month</th>-->
+            <!--                <th>Savings</th>-->
+            <!--            </tr>-->
+            <!--            </thead>-->
+
+
+            <!--            <tbody>-->
+
+            <!--            <tr>-->
+            <!--                <td>January</td>-->
+            <!--                <td>$100</td>-->
+            <!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <td>February</td>-->
+            <!--                <td>$80</td>-->
+            <!--            </tr>-->
+
+
+            <!--            </tbody>-->
+
+        </table>
+    </article>
+
+
+    <article>
+
+
+    </article>
+
+
+</section>
+
+
+</body>
+</html>
