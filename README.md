@@ -33,7 +33,7 @@ datos, modelado de bases de datos, imágenes de prueba, etc.
 
 ---
 Acceso a base de datos y realización de operaciones a nivel de objeto con JPA.
-###CRUD(Create,Read,Update,Delete) sobre Mysql
+### CRUD(Create,Read,Update,Delete) sobre Mysql
 
 
 #### <span style="color:teal"> Person REST API <span style="color:yellow">(Work In Progress)</span></span>
@@ -50,7 +50,7 @@ Acceso a base de datos y realización de operaciones a nivel de objeto con JPA.
 
 ### CRUD MongoDB
 
-####<span style="color:teal">Person REST API <span style="color:yellow">(Work In Progress)</span> </span>
+#### <span style="color:teal">Person REST API <span style="color:yellow">(Work In Progress)</span> </span>
  
 <code>mysql.documents/Person</code> -> Clase @Document que tiene asociada una colección en MongoDB
 
