@@ -11,6 +11,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+/**
+ * Controlador web que muestra cómo consumir peticiones desde Javascript (en el front) y desde el backend con Spring y restTemplate
+ */
 @Controller
 public class Consumers {
 

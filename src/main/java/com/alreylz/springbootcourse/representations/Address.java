@@ -4,6 +4,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*
     Requisitos de un tipo/clase retornable como representación REST:
     - Constructor público sin argumentos

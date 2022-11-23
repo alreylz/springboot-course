@@ -24,7 +24,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- JPA DEPENDENCIES -->
+        <!-- JPA DEPENDENCIES (SPRING DATA) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -36,9 +36,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-
-
 
 
         <!-- Dependencias para MONGODB -->
@@ -66,7 +63,6 @@
         </dependency>
 
 
-
         <!-- THYMELEAF: Use this if you want to have templates and use thymeleaf in them for loading data dynamically into them-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,7 +70,7 @@
         </dependency>
 
 
-        <!--- JSP Dependencies -->
+        <!--- JSP Dependencies: uncomment only if you want to use JSPs-->
         <!--     <dependency>-->
         <!--            <groupId>org.apache.tomcat.embed</groupId>-->
         <!--            <artifactId>tomcat-embed-jasper</artifactId>-->
@@ -87,6 +83,12 @@
         <!--            <version>1.2</version>-->
         <!--        </dependency>-->
 
+
+        <!-- Spring Security -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
 
     </dependencies>
 

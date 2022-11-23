@@ -16,9 +16,12 @@ public class EndpointsListener {
     public void handleContextRefresh(ContextRefreshedEvent event) {
         System.out.println("-------------------------\n" +
                 "ACTIVE ENDPOINTS\n-------------------------");
+//        ApplicationContext applicationContext = event.getApplicationContext();
+//        applicationContext.getBean(RequestMappingHandlerMapping.class)
+//                .getHandlerMethods().forEach((key, value) -> System.out.println(" " + key + " at: " + value));
+
         ApplicationContext applicationContext = event.getApplicationContext();
         applicationContext.getBean(RequestMappingHandlerMapping.class)
-                .getHandlerMethods().forEach((key, value) -> System.out.println(" " + key + " at: " + value));
-
+                .getHandlerMethods().forEach((key, value) -> System.out.println(" " + key));
     }
 }

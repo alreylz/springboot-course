@@ -20,9 +20,6 @@ public class MongoController {
     @Autowired
     MongoRepo mongoRepo;
 
-
-
-
     @GetMapping("/mongo")
     public String rootTutorial() {
         return "MongoTutorial";

@@ -1,38 +1,39 @@
 package com.alreylz.springbootcourse.controllers;
 
 
-import com.alreylz.springbootcourse.mongo.documents.Person;
+import com.alreylz.springbootcourse.mysql.entities.Computer;
+import com.alreylz.springbootcourse.repos.ComputerDAO;
 import com.alreylz.springbootcourse.representations.Address;
 import com.alreylz.springbootcourse.representations.Citizen;
-import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators;
-import org.springframework.http.MediaType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 
 
 /***
- * SampleWebController:
- * Clase que ejemplifica la creación de una serie de métodos que son capaces de responder a peticiones HTTP, bien para responder con una Representación de datos (E.g., JSON/XML) o para mostrar una vista/página web estándar.
+ * SampleWebControllerNoPersistence:
+ * Clase que ejemplifica la creación de una serie de métodos que son capaces de responder a peticiones HTTP para responder con una Representación de datos (E.g., JSON/XML)
  */
 @Controller
-public class SampleWebController {
+public class SampleWebControllerNoPersistence {
 
 
     /**
      * Path base que se usa como base para todos los endpoints de este controlador web (todas las urls empiezan por el valor de esta variables)
      */
-    static final String basePath = "/spring-web-example";
+    static final String basePath = "/spring-web-rest";
 
 
     /* SAMPLE DATA INITIALIZATION */
     /*---------------------------*/
     List<Citizen> citizens = new ArrayList<Citizen>();
     List<Address> addresses = new ArrayList<Address>();
+//    List<Computer> computerLista = new ArrayList<Computer>();
+
 
     // Equivalente a Init method en JEE
     // Aquí lo uso para mostrar datos de ejemplo
@@ -64,6 +65,7 @@ public class SampleWebController {
         citizens.add(citizenD);
 
 
+
     }
 
 
@@ -72,11 +74,6 @@ public class SampleWebController {
       ENDPOINTS API - ADDRESSES
     ----------------------------------
      */
-    @RequestMapping(value = basePath)
-    public @ResponseBody
-    String sampleWebController() {
-        return "<h1> SampleWebController Base URL </h1> ";
-    }
 
     /**
      * REST Endpoint que obtiene todas las representaciones Address disponibles
@@ -117,7 +114,7 @@ public class SampleWebController {
      * @param number número de un Address
      * @return devuelve la representación de un Address en caso de éxito en la actualización.
      */
-    @RequestMapping(value = basePath + "/address/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = basePath + "/addresses/{id}", method = RequestMethod.PUT)
     public @ResponseBody
     Address updateAddressREST(@PathVariable String id, @RequestParam String street, @RequestParam String city, @RequestParam int number) {
 
@@ -135,7 +132,7 @@ public class SampleWebController {
      * @param id identificativo del Address a eliminar
      * @return la representación del Address eliminado.
      */
-    @RequestMapping(value = basePath + "/address/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = basePath + "/addresses/{id}", method = RequestMethod.DELETE)
     public @ResponseBody
     Address deleteAddress(@PathVariable String id) {
 
@@ -191,19 +188,6 @@ public class SampleWebController {
         }
 
         return results;
-    }
-
-
-    @RequestMapping(value = basePath + "/addresses-html")
-    public @ResponseBody
-    String getAllAddressesPLAINTEXT() {
-
-        String resp = "<h1> Lista de direcciones existentes </h1>";
-        for (Address a : addresses) {
-            resp += a.toString() + "<br/>";
-        }
-
-        return resp;
     }
 
 

@@ -18,14 +18,10 @@ public class SpringbootCourseApplication {
         SpringApplication.run(SpringbootCourseApplication.class, args);
     }
 
-
-
-
-
     // Required to be able to consume microservices from thymeleaf (STEP 1)
-@Bean
-    public RestTemplate restemplate(RestTemplateBuilder builder){
+    @Bean
+    public RestTemplate resTemplate(RestTemplateBuilder builder) {
         return builder.build();
-}
+    }
 
 }
