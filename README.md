@@ -1,4 +1,4 @@
-#[TIW][2022-23] SpringBootCourse
+# TIW [2022-23] SpringBootCourse
 
 **Author :@alreylz**
 
@@ -14,14 +14,14 @@ datos, modelado de bases de datos, imágenes de prueba, etc.
 
 
 
-> <span style="color:teal">El "Nuevo Servlet" -> Respondiendo a peticiones HTTP (GET/POST/PUT/DELETE)</span>
+### <span style="color:teal">El "Nuevo Servlet" -> Respondiendo a peticiones HTTP (GET/POST/PUT/DELETE)</span>
 
 <code>representations/...</code> -> Clases sin respaldo en base de datos que pueden ser devueltas como representación al llamarse a nuestra API REST
 
 <code>controllers/BasicController</code> -> Clase con @Controller que tiene una serie de endpoints accesibles y que demuestran el uso de spring web para contestar peticiones.
 
 
-> <span style="color:teal">Creación de APIs REST con Spring +  devolver representaciones JSON/XML </span>
+### <span style="color:teal">Creación de APIs REST con Spring +  devolver representaciones JSON/XML </span>
 
 <code>representations/...</code> -> Clases sin respaldo en base de datos que pueden ser devueltas como representación al llamarse a nuestra API REST
 
@@ -36,11 +36,11 @@ Acceso a base de datos y realización de operaciones a nivel de objeto con JPA.
 ###CRUD(Create,Read,Update,Delete) sobre Mysql
 
 
-> <span style="color:teal"> Person REST API <span style="color:yellow">(Work In Progress)</span></span>
+#### <span style="color:teal"> Person REST API <span style="color:yellow">(Work In Progress)</span></span>
 
 ...
 
-> <span style="color:teal"> Computer REST API </span>
+#### <span style="color:teal"> Computer REST API </span>
 
 <code>mysql.entities/Computer</code> -> Clase entidad asociada con la base de datos
 
@@ -50,7 +50,7 @@ Acceso a base de datos y realización de operaciones a nivel de objeto con JPA.
 
 ### CRUD MongoDB
 
-> <span style="color:teal">Person REST API <span style="color:yellow">(Work In Progress)</span> </span>
+####<span style="color:teal">Person REST API <span style="color:yellow">(Work In Progress)</span> </span>
  
 <code>mysql.documents/Person</code> -> Clase @Document que tiene asociada una colección en MongoDB
 
