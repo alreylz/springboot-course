@@ -1,4 +1,4 @@
-<img height="auto" src="C:\Users\cored\Desktop\Github\springboot-course\setup\images\springboot-course.jpg" width="50%"/>
+<img height="auto" src=".\setup\images\springboot-course.jpg" width="50%"/>
 
 # TIW [2022-23] SpringBootCourse
 **Author :@alreylz** 
