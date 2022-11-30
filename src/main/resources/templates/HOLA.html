@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>fasfsdfasfdafasdf
+<body>
+
+
+Hola esto es thymleaf
+
+
+Mostraré Contenido dinámico que sale del controller == servlet
+
+
+<!--/*@thymesVar id="name" type="String"*/-->
+<p  th:text="${name}" >    Valor por defecto de párrafo</p>
+
+
 
 </body>
 </html>

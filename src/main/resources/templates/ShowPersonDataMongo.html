@@ -11,27 +11,19 @@
 </h1>
 
 <table>
-
-
-    <a>https://spring.io/guides/gs/accessing-data-mysql/ </a>
-
+    
     <thead>
     <tr>
         <th> Number</th>
         <th> Name</th>
         <th> Surname</th>
-        <th> Picture</th>
     </tr>
     </thead>
     <tbody>
-
-
     <tr th:each="person : ${pList}">
         <td th:text="${personStat.count}">#</td>
         <td th:text="${person.name}">Name</td>
         <td th:text="${person.surname}">Surname</td>
-
-        <td  th:with="picture=${person.base64Img()}"> <img width="auto" height="50px"  th:src="@{'data:image/jpeg;base64,'+${picture}}" alt="the profile picture" /></td>
 
     </tr>
     </tbody>

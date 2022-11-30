@@ -63,7 +63,7 @@
         </dependency>
 
 
-        <!-- THYMELEAF: Use this if you want to have templates and use thymeleaf in them for loading data dynamically into them-->
+        <!-- THYMELEAF: Use this if you want to have templates and use thymeleaf in them for loading data dynamically -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

@@ -17,7 +17,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 //
 //@Configuration
-//public class Config {
+//public class ConfigEnableJSPAndThymeleaf {
 //    @Autowired
 //    WebApplicationContext webApplicationContext;
 //

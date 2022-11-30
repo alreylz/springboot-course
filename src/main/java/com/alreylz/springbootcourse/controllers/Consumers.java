@@ -17,15 +17,12 @@ import java.util.List;
 @Controller
 public class Consumers {
 
-
     static final String basePath = "/microservice-consumers";
-
 
     @RequestMapping(value = basePath)
     public String consumersHome() {
         return "MsConsumersHome";
     }
-
 
     @RequestMapping(value = basePath + "/js")
     public String javascriptConsumer() {
@@ -37,21 +34,30 @@ public class Consumers {
     RestTemplate restTemplate;
 
 
-    @RequestMapping(value = basePath + "/thymeleaf")
-    public String thymeleafConsumer(Model model) {
+    @RequestMapping(value = "/uso-thymeleaf")
+    public String ejemploThymleaf(Model model) {
 
-        System.out.println("Petición a thymeleaf");
-        //Petición a microservicio REST (obtengo un objeto)
-        Address anAddress = restTemplate.getForObject("http://localhost:8080/spring-web-example/address/{id}", Address.class, "A");
-        //Petición a microservicio REST (obtengo un array)
-        Address[] allAddresses = restTemplate.getForObject("http://localhost:8080/spring-web-example/addresses", Address[].class);
 
-        //Model es el objeto que permite hacer el equivalente a request.setAttribute()
-        model.addAttribute("singleAddress", anAddress);
-        model.addAttribute("listAddresses", allAddresses);
 
-        return "ThymeleafConsumer";
+//PAsamos info a la vista usando el parámetro model
+        model.addAttribute("name", "Alejandro");
+        //Devolvemos el nombre de la vista (que ha de estar en /resource/templates)
+        return "HOLA";
+
     }
+
+
+//
+//    @RequestMapping(value = basePath + "/thymeleaf")
+//    public String thymeleafConsumer(Model model) {
+
+//
+//        //Model es el objeto que permite hacer el equivalente a request.setAttribute()
+//        model.addAttribute("singleAddress", anAddress);
+//        model.addAttribute("listAddresses", allAddresses);
+//
+//        return "ThymeleafConsumer";
+//    }
 
 
 }

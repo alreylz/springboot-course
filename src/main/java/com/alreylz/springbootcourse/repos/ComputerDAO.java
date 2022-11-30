@@ -31,10 +31,11 @@ public interface ComputerDAO extends CrudRepository<Computer, Long> {
 
 
     //  Ejemplo query por nombrado
-//    List<Computer> findByBrand(String brand);
+
+  //  List<Computer> findComputersByBrand(String brand);
 //    // Especificar queries por JPQL (lo que va tras ':' es un parámetro que se reemplaza por los valores que pasemos al llamar al método)
-//    @Query("SELECT Computer c WHERE c.brand=:brand")
-//    List<Computer> query1(String brand);
+//  @Query("SELECT c FROM Computer c WHERE c.brand=:brand")
+// List<Computer> query1(String brand);
 
 
 }

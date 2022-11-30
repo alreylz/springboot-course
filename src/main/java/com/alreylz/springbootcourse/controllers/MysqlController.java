@@ -3,6 +3,7 @@ package com.alreylz.springbootcourse.controllers;
 import com.alreylz.springbootcourse.mysql.entities.Person;
 import com.alreylz.springbootcourse.repos.PersonMysqlRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,11 @@ public class MysqlController {
 
     @Autowired
      PersonMysqlRepo mysqlRepo;
+
+
+
+
+
 
     @RequestMapping("mysql/people")
     public String showPeopleInDB(Model model){
@@ -42,6 +48,7 @@ public class MysqlController {
 
     @GetMapping("mysql/new/person")
     public String showCreatePersonForm(Model model ){
+
         model.addAttribute("rootWebPath","http://localhost:8080/");
         return "CreatePerson";
     }

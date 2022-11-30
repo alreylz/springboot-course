@@ -57,7 +57,7 @@ public class MongoController {
 
         List<Person> personList = mongoRepo.findAll();
         model.addAttribute("pList",personList);
-        return "ShowPersonData";
+        return "ShowPersonDataMongo";
     }
 
 
